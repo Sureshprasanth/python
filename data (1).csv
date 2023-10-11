@@ -1,0 +1,46 @@
+Task 1 ;
+import requests
+from bs4 import BeautifulSoup
+# URL of the website you want to scrape
+url = 'https://example.com'
+# Send an HTTP GET request to the URL
+response = requests.get(url)
+# Check if the request was successful
+if response.status_code == 200:
+# Parse the HTML content of the page
+"soup = BeautifulSoup(response.text, 'html.parser')"
+# Find the HTML elements containing the data you want to scrape
+"articles = soup.find_all('h2', class_='article-title')"
+# Loop through the elements and extract the data
+for article in articles:
+title = article.text
+print(title)
+else:
+print(f'Failed to retrieve the page. Status code: {response.status_code}')
+Task 2 ;
+import random
+def number_guessing_game():
+# Set the range of numbers
+lower_bound = 1
+upper_bound = 100
+"secret_number = random.randint(lower_bound, upper_bound)"
+"print(""Welcome to the Number Guessing Game!"")"
+"print(f""I'm thinking of a number between {lower_bound} and {upper_bound}."")"
+attempts = 0
+while True:
+try:
+"guess = int(input(""Your guess: ""))"
+attempts += 1
+if guess < secret_number:
+"print(""Higher! Try again."")"
+elif guess > secret_number:
+"print(""Lower! Try again."")"
+
+else:
+"print(f""Congratulations! You've guessed the number {secret_number} in {attempts}"
+"attempts!"")"
+break
+except ValueError:
+"print(""Please enter a valid number."")"
+"if __name__ == ""__main__"":"
+number_guessing_game()
